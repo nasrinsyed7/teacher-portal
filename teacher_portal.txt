@@ -1,0 +1,51 @@
+Requirement:
+***********
+
+1. Login Functionality:
+● Create a login screen where teachers can input their credentials.
+● Upon successful login, authenticate the user by verifying with a database.
+● Handle authentication errors and provide appropriate feedback to the user.
+
+2. Teacher Portal Home & Student Listing Screen:
+● After successful login, redirect the user to the home screen of the teacher
+portal, which also serves as the student listing screen.
+● Display a list of students with their Name, Subject Name, and Marks.
+● Include options to edit and delete student details.
+● Implement functionality to edit student details inline and update the state
+accordingly.
+
+3. New Student Entry:
+● Provide a feature for adding details of a new student using a popup/modal.
+● When adding a new student:
+● Check if a student with the same name and subject combination already
+exists in the database.
+● If a matching record is found, update the marks for that student by adding
+the new marks to the existing ones.
+● If no matching record is found, create a new student record.
+
+File Changes:
+************
+
+A  - register.php, db.php, index.php, home.php, add_student.php, edit_student.php, delete_student.php, logout.php, styles.css, scripts.js
+
+
+
+Database Changes:
+****************
+CREATE DATABASE user;
+
+USE user;
+
+CREATE TABLE teachers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    subject VARCHAR(50) NOT NULL,
+    marks INT NOT NULL
+);
+
